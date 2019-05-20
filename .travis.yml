@@ -13,14 +13,14 @@ jobs:
       language: java
       jdk: openjdk11
       install: skip
-      script: ./gradlew clean build
+      script: gradlew clean build
       before_deploy:
         - git config --local user.name "Raghunandan8142066677"
         - git config --local user.email "raghu053010@gmail.com"
         - git tag -f $RELEASE_TAG
       deploy:
         provider: releases
-        api_key: 469e7534843e2322e722139d31b77506eb873286
+        api_key: "469e7534843e2322e722139d31b77506eb873286"
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
     - stage: deploy to cf
